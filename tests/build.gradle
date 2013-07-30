@@ -1,12 +1,13 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
 
         // repository with the output of the appthwack plugin build
-        maven { url '../repo' }
+        //maven { url '../repo' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.4.2'
+        classpath 'com.android.tools.build:gradle:0.5+'
         classpath 'com.appthwack:gradle:1.0'
     }
 }

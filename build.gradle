@@ -5,6 +5,7 @@ apply plugin: 'signing'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 configurations {
@@ -15,9 +16,10 @@ configurations {
 
 dependencies {
     gradleApi gradleApi()
-    groovy localGroovy()
+    compile localGroovy()
 
-    compile 'com.android.tools.build:builder-test-api:0.4.2'
+    compile 'com.android.tools.build:builder-test-api:0.5.2'
+    compile 'com.appthwack:appthwack:1.0'
 
     testCompile 'junit:junit:3.8.1'
 }
@@ -80,7 +82,7 @@ uploadArchives {
 
             pom.project {
                 name 'AppThwack Plugin for Android'
-                description 'Adds support for deploying Android application to appthwack.com from the Android build system.'
+                description 'Adds support for deploying Android application to https://appthwack.com from the Android build system.'
                 url 'http://www.appthwack.com'
                 inceptionYear '2013'
 

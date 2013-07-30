@@ -5,3 +5,8 @@
 repo
 build
 .gradle
+.idea
+.idea/*
+out
+out/*
+/tests/src/main/gen
