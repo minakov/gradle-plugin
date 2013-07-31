@@ -28,6 +28,8 @@ group = 'com.appthwack'
 archivesBaseName = 'gradle'
 version = '1.0'
 
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
 // custom tasks for creating source/javadoc jars
 task sourcesJar(type: Jar, dependsOn:classes) {
     classifier = 'sources'
@@ -83,7 +85,7 @@ uploadArchives {
             pom.project {
                 name 'AppThwack Plugin for Android'
                 description 'Adds support for deploying Android application to https://appthwack.com from the Android build system.'
-                url 'http://www.appthwack.com'
+                url 'https://appthwack.com'
                 inceptionYear '2013'
 
                 licenses {
@@ -100,7 +102,10 @@ uploadArchives {
                 }
                 developers {
                     developer {
-                        name 'AppThwack'
+                        name 'Andrew Hawker'
+                        email 'andrew@appthwack.com'
+                        organization 'AppThwack'
+                        organizationUrl 'https://appthwack.com'
                     }
                 }
             }
@@ -109,6 +114,6 @@ uploadArchives {
 }
 
 signing {
-    required { gradle.taskGraph.hasTask("uploadArchives") }
+    required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
     sign configurations.archives
 }
