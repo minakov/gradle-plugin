@@ -14,9 +14,6 @@ Installation
 
 A typical build.gradle file for Android Studio will look like this:
 
-**Note: The AppThwack specific sections are in bold.**
-
-    <pre>
     buildscript {
         repositories {
             mavenCentral()
@@ -26,13 +23,13 @@ A typical build.gradle file for Android Studio will look like this:
             classpath 'com.android.tools.build:gradle:0.5.4'
 
             //Jersey explicit requirement due to Groovy compiler + Java refection issues.
-            <em>classpath 'com.sun.jersey:jersey-core:1.8'</em>
-            <em>classpath 'com.appthwack:gradle:1.0'</em>
+            classpath 'com.sun.jersey:jersey-core:1.8'
+            classpath 'com.appthwack:gradle:1.0'
         }
     }
 
     apply plugin: 'android'
-    <em>apply plugin: 'appthwack'</em>
+    apply plugin: 'appthwack'
 
     dependencies {
         //...
@@ -42,10 +39,9 @@ A typical build.gradle file for Android Studio will look like this:
         //...
     }
 
-    <em>appthwack</em> {
+    appthwack {
         //See 'Usage' section for more details.
     }
-    </pre>
 
 Usage
 =====
@@ -81,26 +77,22 @@ Extension Fields
 
 ### API Key
 
-Name: apiKey
-
-Description: API Key of your AppThwack account. See [profile](https://appthwack.com/user/profile) page for details.
-
-Usage: Required
-
+Name: apiKey  
+Description: API Key of your AppThwack account. See [profile](https://appthwack.com/user/profile) page for details.  
+Usage: Required  
 Example:
+
     appthwack {
         apiKey="DTOZZNWeCNWFWtuqqJEm14nnonVJMDXA9flmdvzg"
     }
 
 ### Project
 
-Name: project
-
-Description: Name of the AppThwack project to use.
-
-Usage: Required
-
+Name: project  
+Description: Name of the AppThwack project to use.  
+Usage: Required  
 Example:
+
     appthwack {
         //...
         project='demoproject'
@@ -108,13 +100,11 @@ Example:
 
 ### Type
 
-Name: type
-
-Description: Type of test to schedule.
-
-Usage: Optional, default: "junit"
-
+Name: type  
+Description: Type of test to schedule.  
+Usage: Optional, default: "junit"  
 Example:
+
     appthwack {
         //...
         type='junit'
@@ -122,13 +112,11 @@ Example:
 
 ### DevicePool
 
-Name: devicePool
-
-Description: Name of the AppThwack device pool to use.
-
-Usage: Optional, default: "Top 10"
-
+Name: devicePool  
+Description: Name of the AppThwack device pool to use.  
+Usage: Optional, default: "Top 10"  
 Example:
+
     appthwack {
         //...
         devicePool='Top 25'
@@ -136,13 +124,11 @@ Example:
 
 ### Calabash
 
-Name: calabash
-
-Description: Function to schedule Calabash tests. Note: This sets type="calabash".
-
-Usage: Optional
-
+Name: calabash  
+Description: Function to schedule Calabash tests. Note: This sets type="calabash".  
+Usage: Optional  
 Example:
+
     appthwack {
         //...
         calabash("/path/to/calabash/features.zip")
@@ -150,13 +136,11 @@ Example:
 
 ### AppExplorer
 
-Name: explorer
-
-Description: Function to schedule AppExplorer tests. Note: This sets type="appexplorer".
-
-Usage: Optional
-
+Name: explorer  
+Description: Function to schedule AppExplorer tests. Note: This sets type="appexplorer".  
+Usage: Optional  
 Example:
+
     appthwack {
         //...
         explorer()
