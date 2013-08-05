@@ -5,7 +5,7 @@ Plugin to integrate [AppThwack](https://appthwack.com) with [Gradle](http://www.
 Status
 ======
 
-Currently under active development.
+Initial 1.0 release.
 
 Installation
 ============
@@ -40,11 +40,31 @@ A typical build.gradle file for Android Studio will look like this:
     }
 
     appthwack {
-        //See 'Usage' section for more details.
+        //See 'Configuration' section for more details.
     }
 
 Usage
 =====
+
+### Android Studio
+
+1.)  Click Run > Edit Configurations.
+2.)  Click the green '+' in the top left corner and select 'Gradle'.
+3.)  In the 'Name' field, enter the text: 'Run Tests on AppThwack'.
+4.)  In the 'Gradle project' field, enter the fully-qualified path to the top level directory of your Android Studio project.
+5.)  In the 'Tasks' field, enter the text: 'appthwackUpload'.
+6.)  Hit 'OK'.
+7.)  Select 'Run Tests on AppThwack' from the build configuration drop down.
+8.)  Hit play and watch it go.
+9.)  The task will print out some helpful information and a URL where the scheduled run can be viewed.
+
+### CLI
+
+1.)  cd path/to/my/android/studio/project
+2.)  ./gradlew appthwackUpload
+
+Configuration
+=============
 
 ### Schedule JUnit/Robotium tests.
 
@@ -150,3 +170,9 @@ Dependencies
 ============
 
 This project uses the [appthwack-java](https://github.com/appthwack/appthwack-java) client.
+
+Issues
+======
+
+Have a question/comment/problem with the Gradle/Android Studio/AppThwack?
+Open a Github [Issue](https://github.com/appthwack/gradle-plugin/issues) or file a ticket on [UserVoice](http://appthwack.uservoice.com/) and we'll get back to you as soon as we can.
