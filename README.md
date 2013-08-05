@@ -49,18 +49,28 @@ Usage
 ### Android Studio
 
 1.)  Click Run > Edit Configurations.
+
 2.)  Click the green '+' in the top left corner and select 'Gradle'.
+
 3.)  In the 'Name' field, enter the text: 'Run Tests on AppThwack'.
+
 4.)  In the 'Gradle project' field, enter the fully-qualified path to the top level directory of your Android Studio project.
+
 5.)  In the 'Tasks' field, enter the text: 'appthwackUpload'.
+
 6.)  Hit 'OK'.
+
 7.)  Select 'Run Tests on AppThwack' from the build configuration drop down.
+
 8.)  Hit play and watch it go.
+
 9.)  The task will print out some helpful information and a URL where the scheduled run can be viewed.
+
 
 ### CLI
 
 1.)  cd path/to/my/android/studio/project
+
 2.)  ./gradlew appthwackUpload
 
 Configuration
