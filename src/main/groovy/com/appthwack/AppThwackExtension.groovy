@@ -55,7 +55,7 @@ class AppThwackExtension {
      * [Optional] Name of custom device pool to use.
      * Default: Top 10
      */
-    String devicePool = "Top 10"
+    String devicePool = "Top 10 devices"
 
     /**
      * [Optional] Fully qualified path to features.zip which contains Calabash test content.

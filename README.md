@@ -98,7 +98,7 @@ Configuration
     appthwack {
         apiKey='...'
         project='Demo Project'
-        devicePool='Top 10'
+        devicePool='Top 10 devices'
         explorer()
     }
 
@@ -144,12 +144,12 @@ Example:
 
 Name: devicePool  
 Description: Name of the AppThwack device pool to use.  
-Usage: Optional, default: "Top 10"  
+Usage: Optional, default: "Top 10 devices"
 Example:
 
     appthwack {
         //...
-        devicePool='Top 25'
+        devicePool='Top 25 devices'
     }
 
 ### Calabash
