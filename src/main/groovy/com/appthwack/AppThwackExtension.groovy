@@ -53,7 +53,7 @@ class AppThwackExtension {
 
     /**
      * [Optional] Name of custom device pool to use.
-     * Default: Top 10
+     * Default: Top 10 devices
      */
     String devicePool = "Top 10 devices"
 
@@ -64,18 +64,41 @@ class AppThwackExtension {
     String calabashContent
 
     /**
+     * [Optional] Cucumber tags to pass into Calabash.
+     * Note: Set by call to calabash()
+     */
+    String calabashTags
+
+    /**
+     * [Optional] Filter TestCase/TestSuite to run.
+     * Note: Set by call to junit()
+     */
+    String testFilter
+
+    /**
      * [Optional] Optional execution parameters for the AppThwack AppExplorer.
      * Note: Set by call to explorer()
      */
     public final HashMap<String, String> explorerOptions = new HashMap<String, String>();
 
     /**
-     * Select Calabash content to use.
-     * @param path path to features.zip
+     * Select JUnit/Robotium content to run.
+     * @param filter Select which TestCase/TestSuite to run.
      */
-    void calabash(String path) {
+    void junit(String filter="") {
+        type = JUNIT_TYPE
+        testFilter = filter
+    }
+
+    /**
+     * Select Calabash content to run.
+     * @param path path to features.zip
+     * @param tags collection of Cucumber tags to pass to Calabash
+     */
+    void calabash(String path, String tags="") {
         type = CALABASH_TYPE
         calabashContent = path
+        calabashTags = tags
     }
 
     /**

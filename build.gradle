@@ -19,14 +19,14 @@ dependencies {
     compile localGroovy()
 
     compile 'com.android.tools.build:builder-test-api:0.5.2'
-    compile 'com.appthwack:appthwack:1.0'
+    compile 'com.appthwack:appthwack:1.1'
 
     testCompile 'junit:junit:3.8.1'
 }
 
 group = 'com.appthwack'
 archivesBaseName = 'gradle'
-version = '1.0'
+version = '1.1'
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 

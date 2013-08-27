@@ -65,7 +65,6 @@ public class AppThwackServer extends TestServer {
         String apiKey = extension.getApiKey();
         String domain = extension.getDomain();
         api = new AppThwackApi(apiKey, domain);
-        System.out.println(String.format("[AppThwack] Using API Key %s.", apiKey));
 
         String projectName = extension.getProject();
         System.out.println(String.format("[AppThwack] Using Project '%s'.", projectName));
@@ -232,10 +231,10 @@ public class AppThwackServer extends TestServer {
 
         try {
             if (type.equalsIgnoreCase(AppThwackExtension.JUNIT_TYPE)) {
-                return project.scheduleJUnitRun(app, tests, name, pool);
+                return project.scheduleJUnitRun(app, tests, name, pool, extension.getTestFilter());
             }
             else if (type.equalsIgnoreCase(AppThwackExtension.CALABASH_TYPE)) {
-                return project.scheduleCalabashRun(app, tests, name, pool);
+                return project.scheduleCalabashRun(app, tests, name, pool, extension.getCalabashTags());
             }
             else {
                 return project.scheduleAppExplorerRun(app, name, pool, options);
