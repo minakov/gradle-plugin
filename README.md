@@ -24,7 +24,7 @@ A typical build.gradle file for Android Studio will look like this:
 
             //Jersey explicit requirement due to Groovy compiler + Java refection issues.
             classpath 'com.sun.jersey:jersey-core:1.8'
-            classpath 'com.appthwack:gradle:1.0'
+            classpath 'com.appthwack:gradle:1.3'
         }
     }
 
