@@ -5,7 +5,7 @@ Plugin to integrate [AppThwack](https://appthwack.com) with [Gradle](http://www.
 Status
 ======
 
-Initial 1.0 release.
+Initial 1.3 release.
 
 Installation
 ============
